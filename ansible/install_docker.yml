@@ -17,6 +17,12 @@
           - gnupg
           - unzip
           - tar
+          - software-properties-common
+        state: present
+
+    - name: Install Ansible
+      apt:
+        name: ansible
         state: present
 
     - name: Install Docker
