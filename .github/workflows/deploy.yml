@@ -10,11 +10,14 @@ jobs:
     runs-on: self-hosted
 
     steps:
-
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run Ansible Playbook
+      - name: Print system info
         run: |
-          cd ansible
-          ansible-playbook deploy_app.yml
+          echo "Running on self-hosted runner"
+          uname -a
+
+      - name: List files
+        run: |
+          ls -la

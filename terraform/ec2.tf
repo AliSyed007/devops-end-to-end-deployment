@@ -1,5 +1,5 @@
 resource "aws_instance" "web" {
-  ami           = "ami-0c02fb55956c7d316" # Amazon Linux 2 (us-east-1)
+  ami           = "ami-053b0d53c279acc90" # Ubuntu 22.04 LTS (us-east-1)
   instance_type = "t2.micro"
 
   subnet_id                   = aws_subnet.public.id

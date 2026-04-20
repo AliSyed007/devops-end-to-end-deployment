@@ -33,10 +33,7 @@ resource "aws_security_group" "web_sg" {
 }
 
 resource "aws_key_pair" "deployer" {
-  key_name   = "${var.project_name}-key"
-  public_key = file(var.public_key_path)
+  key_name   = "devops-portfolio-key"
+  public_key = file("/home/mahmeer/.ssh/devops-portfolio.pub")
 
-  tags = {
-    Name = "${var.project_name}-key"
-  }
 }
