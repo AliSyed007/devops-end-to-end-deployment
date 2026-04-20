@@ -1,5 +1,7 @@
 # 🚀 DevOps End-to-End Deployment Project
 
+🔗 LinkedIn: https://www.linkedin.com/in/sayed-mahmeer-ali-shah-7359241b3
+
 This project demonstrates a complete DevOps pipeline using Terraform, Ansible, Docker, and GitHub Actions on AWS.
 
 ---
@@ -17,21 +19,27 @@ This project automates:
 ---
 
 ## 🧱 Architecture
-Local Machine
-↓
-Terraform → AWS Infrastructure (VPC, Subnet, EC2)
-↓
-Ansible → Server Configuration (Docker installation)
-↓
-Ansible → Application Deployment
-↓
-Docker → Runs Nginx container
-↓
-Browser → Access via Public IP
 
+Terraform provisions AWS infrastructure including VPC, subnet, security group, and EC2 instance.
+
+Ansible is used for configuration management to install Docker and deploy the application.
+
+Docker is used to containerize the application using Nginx.
+
+GitHub Actions is used for CI/CD, triggered on every push to the main branch.
+
+A self-hosted GitHub runner runs on the EC2 instance, executing deployment steps locally.
+
+Deployment Flow:
+GitHub → Actions → Self-hosted Runner → Ansible → Docker → Application
+
+Terraform → AWS EC2 → Ansible → Docker → Nginx
+                          ↑
+                   GitHub Actions
+                          ↑
+                 Self-hosted Runner
 
 ---
-
 ## ⚙️ Tech Stack
 
 - AWS (EC2, VPC)
@@ -96,7 +104,7 @@ Docker image registry integration
 Kubernetes deployment
 👨‍💻 Author
 
-Ali Syed
+Sayed Mahmeer Ali Shah
 
 
 ---
